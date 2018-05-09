@@ -1,77 +1,741 @@
 <!DOCTYPE html>
-<html lang="pt-br" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>Tech Pizza</title>
-    <meta name="portview" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  </head>
-  <body>
+<html lang="pt-br">
 
-    <link rel="stylesheet" href="css/bootstrap.css">
-    <link rel="stylesheet" href="css/style.css">
+<head>
+	<title>Tech Pizza</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="utf-8">
+	<script>
+		addEventListener("load", function () {
+			setTimeout(hideURLbar, 0);
+		}, false);
 
-    <!--      Navbar Inicio     -->
+		function hideURLbar() {
+			window.scrollTo(0, 1);
+		}
+	</script>
+	<link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
+	<link rel="stylesheet" href="css/flexslider.css" type="text/css" media="screen" property="" />
+	<link href="css/style.css" rel='stylesheet' type='text/css' />
+	<link href="css/fontawesome-all.css" rel="stylesheet">
+	<link href="css/simpleLightbox.css" rel='stylesheet' type='text/css' />
+	<link href="//fonts.googleapis.com/css?family=Poiret+One" rel="stylesheet">
+	<link href="//fonts.googleapis.com/css?family=Lato:100i,300,300i,400,400i,700,700i,900" rel="stylesheet">
+	<link href="//fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700" rel="stylesheet">
+</head>
 
-    <nav class="navbar navbar-expand-md navbar-dark borda fixed-top bg-preto" role="navigation">
-      <a class="navbar-brand" href="#">
-        <img src="imagens/logo.png" class="logo" alt="">
-      </a>
-      <a href="#" class="logo-centro">
-        <img src="imagens/logocentro.png" class="logo-centro" alt="">
-      </a>
+<body>
+	<!--/banner-->
+	<header>
+		<div class="top-bar_sub container-fluid pt-2 pb-2">
+			<div class="row ">
+				<div class="col-md-4 top-forms text-left"  data-aos="fade-up">
+					<img src="images/logocentro.svg" style="width:95px; height: 95px;" alt="">
+				</div>
+				<div class="col-md-4 logo text-center" data-aos="fade-up">
+						<img src="images/logo.png" class="img-fluids navbar-img-brand border-0" alt="">
+				</div>
 
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse ml-auto">
-        <div class="navbar-nav ml-auto">
-          <a class="nav-item nav-link active" href="#">Home</a>
-          <a class="nav-item nav-link" href="#">Cardápio</a>
-          <a class="nav-item nav-link" href="#">Eventos</a>
-          <a class="nav-item nav-link" href="#">Contato</a>
-        </div>
-      </div>
-    </nav>
+				<style media="screen">
+					.navbar-img-brand{
+						width: 115px;
+						height: 95px;
+					}
+				</style>
 
-    <!--      Navbar Fim     -->
+				<div class="col-md-4 log-icons text-right mt-4"  data-aos="fade-up">
 
+					<ul class="social_list1">
+						<li>
+							<a href="#" class="facebook1 mx-2">
+								<i class="fab fa-facebook-f"></i>
+							</a>
+						</li>
+						<li>
+							<a href="#" class="pin">
+								<i class="fab fa-pinterest-p"></i>
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</header>
 
-    <section class="container-fluid text-dark bg-fundo">
-      <div class="card rounded-0">
-        <img src="imagens/giphy.gif" alt="" class="card-img rounded-0">
-      </div>
-    </section>
-
-
-    <section class="container-fluid mt-5 mr-5 ml-5">
-      <h1 class="h1 text-center mb-3">Cardápio</h1>
-      <div class="row">
-        <div class="col-md-6">
-          <div class="col-md-2">
-            <img src="imagens/slide1.jpg" class="img-fluid" alt="">
-          </div>
-          <div class="col-md-4">
-            <h2 class="h2 text-center">Marguerita</h2>
-            <p class="h5 font-italic">molho, tomate, muzarella, manjericão</p>
-          </div>
-        </div>
-      </div>
-      <div class="row ">
-        <div class="col-md-6">
-          <div class="col-md-4">
-
-          </div>
-          <div class="col-md-8">
-
-          </div>
-        </div>
-      </div>
-    </section>
+	
+	<!--//banner-->
+	<!--/nav-->
+	<div class="header_top" id="home">
+		<nav class="navbar navbar-expand-lg navbar-light bg-light">
+			<button class="navbar-toggler navbar-toggler-right mx-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+			    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
 
 
-    <script type="text/javascript" src="js/jquery-3.2.1.slim.min.js"></script>
-    <script type="text/javascript" src="js/popper.min.js"></script>
-    <script type="text/javascript" src="js/bootstrap.js"></script>
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<ul class="navbar-nav mx-auto">
+					<li class="nav-item active">
+						<a class="nav-link" href="index.html">Home
+							<span class="sr-only">(current)</span>
+						</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link scroll" href="#about">Sobre nós</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link scroll" href="#menu">Cardápio</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="contact.html">Localização</a>
+					</li>
 
-  </body>
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+						    aria-expanded="false">
+							Eventos
+						</a>
+						<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+							<a class="dropdown-item scroll" href="#eventos">Rodízios</a>
+							<div class="dropdown-divider"></div>
+							<a class="dropdown-item scroll" href="#eventos">Música ao Vivo</a>
+							<div class="dropdown-divider"></div>
+							<a class="dropdown-item" href="contact.html">Comemore seu aniversario</a>
+
+						</div>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="contact.html">Contato</a>
+					</li>
+
+				</ul>
+			</div>
+		</nav>
+
+	</div>
+	<!--//nav-->
+	<!--/inner-content-->
+	<!--/banner-bottom-->
+	<section class="banner-bottom" id="about">
+		<div class="container">
+			<h3 class="tittle">Sobre Nós</h3>
+			<div class="row inner-sec">
+				<div class="col-lg-6 about-img" data-aos="flip-right">
+					<img src="images/pizza.png" class="img-fluid" alt="">
+				</div>
+				<div class="col-lg-6 about-info text-left" data-aos="flip-left" >
+					<h4 class="sub-hd mb-4">Mamma mia, Pizza!</h4>
+					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit sedc dnmo eiusmod tempor incididunt ut labore et dolore magna
+						aliqua uta enim ad minim ven iam quis nostrud exercitation ullamco labor nisi ut aliquip exea commodo consequat duis
+						aute irudre dolor in elit sed uta labore dolore reprehender</p>
+					<p class="sup-para mt-2">Lorem ipsum dolor sit amet consectetur adipisicing elit sedc dnmo eiusmod tempor incididunt ut labore et dolore magna
+						aliqua uta enim ad minim ven iam quis nostrud exercitation ullamco labor nisi ut aliquip exea commodo consequat duis
+						aute irudre dolor in elit sed uta labore dolore reprehender</p>
+					<div class="view my-4">
+						<a href="single.html" class="btn btn-primary read-m">View More</a>
+					</div>
+
+					<img src="images/pizza2.png" class="img-fluid" alt="">
+				</div>
+			</div>
+		</div>
+	</section>
+	<!--//banner-bottom-->
+	<!--/banner-bottom-->
+	<section class="grid-info-section bg-dark">
+		<div class="container">
+			<h3 class="tittle text-white">Mais Vendidas</h3>
+			<div class="row inner-sec">
+				<ul id="flexiselDemo1">
+					<li>
+						<div class="blog-item text-center">
+							<img src="images/img1.png" alt=" " class="img-fluid rounded-circle" />
+							<div class="floods-text">
+								<h3>Frango</h3>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="blog-item text-center">
+							<img src="images/img6.png" alt=" " class="img-fluid rounded-circle" />
+							<div class="floods-text">
+								<h3>Bacon</h3>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="blog-item text-center">
+							<img src="images/img3.png" alt=" " class="img-fluid rounded-circle" />
+							<div class="floods-text">
+								<h3>Portuguesa</h3>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="blog-item text-center">
+							<img src="images/img4.png" alt=" " class="img-fluid rounded-circle" />
+							<div class="floods-text">
+								<h3>Marguerita</h3>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="blog-item text-center">
+							<img src="images/img5.png" alt=" " class="img-fluid rounded-circle" />
+							<div class="floods-text">
+								<h3>Calabresa</h3>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="blog-item text-center">
+							<img src="images/img2.png" alt=" " class="img-fluid rounded-circle" />
+							<div class="floods-text">
+								<h3>Mussarela</h3>
+							</div>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</section>
+	<!--//banner-bottom-->
+	<!--/Menu-->
+	<section class="banner-bottom menu" id="menu">
+		<div class="container">
+			<h3 class="tittle">Cardápio</h3>
+			<div class="row inner-sec">
+				<div class="tabs">
+					<ul class="nav nav-pills mb-5 justify-content-center" id="pills-tab" role="tablist">
+						<li class="nav-item">
+							<a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pizzas" role="tab" aria-controls="pills-home"
+							    aria-selected="true">Pizzas</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#bebidas" role="tab" aria-controls="pills-profile"
+							    aria-selected="false">Bebidas</a>
+						</li>
+
+					</ul>
+					<div class="tab-content" id="pills-tabContent">
+						<div class="tab-pane fade show active" id="pizzas" role="tabpanel" aria-labelledby="pills-home-tab">
+							<div class="menu-grids my-lg-4 my-md-2">
+								<div class="row inner-menu mt-4">
+									<div class="col-md-6 menu-grid-left" data-aos="fade-down">
+										<div class="row mt-2">
+											<div class="col-md-5 menu-img">
+												<img src="images/img2.png" class="img-fluid rounded-circle" alt="">
+											</div>
+											<div class="col-md-7 menu-img-info mt-4 mt-md-2">
+												<h5>Mussarela</h5>
+												<p class="font-italic">Molho, mussarela, azeitona, orégano</p>
+												<p class="sub-meta mt-2">$45,90</p>
+											</div>
+										</div>
+
+									</div>
+									<div class="col-md-6 menu-grid-right" data-aos="fade-down">
+										<div class="row mt-2">
+											<div class="col-md-5 menu-img">
+												<img src="images/img4.png" class="img-fluid rounded-circle" alt="">
+											</div>
+											<div class="col-md-7 menu-img-info mt-4 mt-md-2">
+												<h5>Marguerita</h5>
+												<p class="font-italic">Molho, tomate, mussarela, manjericão</p>
+												<p class="sub-meta mt-2">$45,90</p>
+											</div>
+										</div>
+
+									</div>
+								</div>
+								<div class="row inner-menu mt-4">
+									<div class="col-md-6 menu-grid-left" data-aos="fade-down">
+										<div class="row mt-2">
+											<div class="col-md-5 menu-img">
+												<img src="images/img6.png" class="img-fluid rounded-circle" alt="">
+											</div>
+											<div class="col-md-7 menu-img-info mt-4 mt-md-2">
+												<h5>Bacon</h5>
+												<p class="font-italic">Molho, tomate, mussarela, presunto, bacon</p>
+												<p class="sub-meta mt-2">$47,90</p>
+											</div>
+										</div>
+
+									</div>
+									<div class="col-md-6 menu-grid-right" data-aos="fade-down">
+										<div class="row mt-2">
+											<div class="col-md-5 menu-img">
+												<img src="images/img3.png" class="img-fluid rounded-circle" alt="">
+											</div>
+											<div class="col-md-7 menu-img-info mt-4 mt-md-2">
+												<h5>Portuguesa</h5>
+												<p class="font-italic">Molho, tomate, calabresa, ovo, azeitona preta, cebola, pimentão</p>
+												<p class="sub-meta mt-2">$47,90</p>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="row inner-menu mt-4">
+									<div class="col-md-6 menu-grid-left" data-aos="fade-down">
+										<div class="row mt-2">
+											<div class="col-md-5 menu-img">
+												<img src="images/img1.png" class="img-fluid rounded-circle" alt="">
+											</div>
+											<div class="col-md-7 menu-img-info mt-4 mt-md-2">
+												<h5>Frango</h5>
+												<p class="font-italic">Molho, tomate, mussarela, frango, oregano</p>
+												<p class="sub-meta mt-2">$45,90</p>
+											</div>
+										</div>
+
+									</div>
+									<div class="col-md-6 menu-grid-right" data-aos="fade-down">
+										<div class="row mt-2">
+											<div class="col-md-5 menu-img">
+												<img src="images/img5.png" class="img-fluid rounded-circle" alt="">
+											</div>
+											<div class="col-md-7 menu-img-info mt-4 mt-md-2">
+												<h5>Calabresa</h5>
+												<p class="font-italic">Molho, tomate, mussarela, calabresa</p>
+												<p class="sub-meta mt-2">$47,90</p>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="tab-pane fade" id="bebidas" role="tabpanel" aria-labelledby="pills-profile-tab">
+							<div class="menu-grids my-lg-4 my-md-2">
+									<div class="row inner-menu mt-4">
+									<div class="col-md-6 menu-grid-left" data-aos="fade-down">
+										<div class="row mt-2">
+											<div class="col-md-5 menu-img">
+												<img src="images/aperol.png" class="img-fluid rounded-circle" alt="">
+											</div>
+											<div class="col-md-7 menu-img-info mt-4 mt-md-2">
+												<h5>Aperol Spritz</h5>
+												<p class="sub-meta mt-2">$19,90</p>
+											</div>
+										</div>
+
+									</div>
+									<div class="col-md-6 menu-grid-right" data-aos="fade-down">
+										<div class="row mt-2">
+											<div class="col-md-5 menu-img">
+												<img src="images/caipirinha.png" class="img-fluid rounded-circle" alt="">
+											</div>
+											<div class="col-md-7 menu-img-info mt-4 mt-md-2">
+												<h5>Caipirinha</h5>
+												<p class="sub-meta mt-2">$15,90</p>
+											</div>
+										</div>
+
+									</div>
+								</div>
+								<div class="row inner-menu mt-4">
+									<div class="col-md-6 menu-grid-left" data-aos="fade-down">
+										<div class="row mt-2">
+											<div class="col-md-5 menu-img">
+												<img src="images/sexonthebeach.png" class="img-fluid rounded-circle" alt="">
+											</div>
+											<div class="col-md-7 menu-img-info mt-4 mt-md-2">
+												<h5>Sex on the beach</h5>
+												<p class="sub-meta mt-2">
+													$16,90
+												</p>
+											</div>
+										</div>
+
+									</div>
+									<div class="col-md-6 menu-grid-right" data-aos="fade-down">
+										<div class="row mt-2">
+											<div class="col-md-5 menu-img">
+												<img src="images/margarita.png" class="img-fluid rounded-circle" alt="">
+											</div>
+											<div class="col-md-7 menu-img-info mt-4 mt-md-2">
+												<h5>Margarita</h5>
+												<p class="sub-meta mt-2">
+													$18,90
+												</p>
+											</div>
+										</div>
+
+									</div>
+								</div>
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!--//Menu-->
+
+	<!--/blog-->
+	<section class="blog_sec container-fluid" id="eventos">
+		<h3 class="tittle">Eventos</h3>
+		<div class="row inner-sec">
+
+			<div class="col-lg-12 banner-btm-left">
+				<div class="banner-btm-top">
+					<div class="banner-btm-inner a1 text-left">
+						<h6>
+							<a href="">Música ao Vivo</a>
+						</h6>
+						<p class="paragraph">
+							Dos dias 15 ao fim do mês realizamos apresentações ao vivo de músicos locais nas sextas e sábados.
+						</p>
+					</div>
+					<div class="banner-btm-inner a2">
+
+					</div>
+				</div>
+				<div class="banner-btm-bottom">
+					<div class="banner-btm-inner a3">
+
+					</div>
+					<div class="banner-btm-inner a4 text-left">
+						<h6>
+							<a href="">Rodízios</a>
+						</h6>
+						<p class="paragraph">
+							Do início do mês ao dia 15, nas quintas e sextas é realizado o rodízio da casa.
+						</p>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</section>
+	<!--//blog-->
+	<!--/Gallry-->
+	<section class="banner-bottom ">
+		<div class="container">
+			<h3 class="tittle">Nossa Galeria</h3>
+			<div class="row inner-sec">
+
+				<div class="col-md-4 proj_gallery_grid" data-aos="zoom-in">
+					<div class="section_1_gallery_grid">
+						<a title="Donec sapien massa, placerat ac sodales ac, feugiat quis est." href="images/p1.jpg">
+							<div class="section_1_gallery_grid1">
+								<img src="images/sld1.png" alt=" " class="img-fluid" />
+								<div class="proj_gallery_grid1_pos">
+									<h3>Baked Food</h3>
+									<p>Add some text</p>
+								</div>
+							</div>
+						</a>
+					</div>
+					<div class="section_1_gallery_grid" data-aos="zoom-in">
+						<a title="Donec sapien massa, placerat ac sodales ac, feugiat quis est." href="images/p2.jpg">
+							<div class="section_1_gallery_grid1">
+								<img src="images/sld2.png" alt=" " class="img-fluid" />
+								<div class="proj_gallery_grid1_pos">
+									<h3>Baked Food</h3>
+									<p>Add some text</p>
+								</div>
+							</div>
+						</a>
+					</div>
+
+				</div>
+				<div class="col-md-4 proj_gallery_grid" data-aos="zoom-in">
+					<div class="section_1_gallery_grid">
+						<a title="Donec sapien massa, placerat ac sodales ac, feugiat quis est." href="images/p4.jpg">
+							<div class="section_1_gallery_grid1">
+								<img src="images/sld3.png" alt=" " class="img-fluid" />
+								<div class="proj_gallery_grid1_pos">
+									<h3>Baked Food</h3>
+									<p>Add some text</p>
+								</div>
+							</div>
+						</a>
+					</div>
+					<div class="section_1_gallery_grid" data-aos="zoom-in">
+						<a title="Donec sapien massa, placerat ac sodales ac, feugiat quis est." href="images/p5.jpg">
+							<div class="section_1_gallery_grid1">
+								<img src="images/sld4.png" alt=" " class="img-fluid" />
+								<div class="proj_gallery_grid1_pos">
+									<h3>Baked Food</h3>
+									<p>Add some text</p>
+								</div>
+							</div>
+						</a>
+					</div>
+
+				</div>
+				<div class="col-md-4 proj_gallery_grid" data-aos="zoom-in">
+					<div class="section_1_gallery_grid">
+						<a title="Donec sapien massa, placerat ac sodales ac, feugiat quis est." href="images/p3.jpg">
+							<div class="section_1_gallery_grid1">
+								<img src="images/sld5.png" alt=" " class="img-fluid" />
+								<div class="proj_gallery_grid1_pos">
+									<h3>Baked Food</h3>
+									<p>Add some text</p>
+								</div>
+							</div>
+						</a>
+					</div>
+					<div class="section_1_gallery_grid" data-aos="zoom-in">
+						<a title="Donec sapien massa, placerat ac sodales ac, feugiat quis est." href="images/p2.jpg">
+							<div class="section_1_gallery_grid1">
+								<img src="images/sld6.png" alt=" " class="img-fluid" />
+								<div class="proj_gallery_grid1_pos">
+									<h3>Baked Food</h3>
+									<p>Add some text</p>
+								</div>
+							</div>
+						</a>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</section>
+	<!--//gallery-->
+	<!--reviews_sec-->
+	<section class="banner-bottom reviews_sec">
+		<div class="container">
+			<h3 class="tittle cen">Integrantes</h3>
+			<div class="inner-sec">
+				<div class="flexslider mx-auto">
+					<ul class="slides">
+						<li>
+							<div class="row">
+								<div class="col-md-3 testimonials_grid-inn">
+									<img src="images/anna.png" alt=" " class="img-fluid" />
+								</div>
+								<div class="col-md-9 testimonials_grid text-left">
+									<h3>Anna Theresa
+										<span>(A)</span>
+									</h3>
+									<i>United States</i>
+									<p>Maecenas interdum, metus vitae tincidunt porttitor,Proin eget gravida odio. Donec ullamcorper est eu magna quam
+										egestas sem, ac scelerisque nisl nibh vel lacus. Proin eget gravida odio. Donec ullamcorper est eu accumsan cursus.</p>
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="row">
+								<div class="col-md-3 testimonials_grid-inn">
+									<img src="images/carlos.png" alt=" " class="img-fluid" />
+								</div>
+								<div class="col-md-9 testimonials_grid text-left">
+									<h3>Carlos Henrique
+										<span>Customer</span>
+									</h3>
+									<i>United States</i>
+									<p>Maecenas interdum, metus vitae tincidunt porttitor,Proin eget gravida odio. Donec ullamcorper est eu magna quam
+										egestas sem, ac scelerisque nisl nibh vel lacus. Proin eget gravida odio. Donec ullamcorper est eu accumsan cursus.</p>
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="row">
+								<div class="col-md-3 testimonials_grid-inn">
+									<img src="images/estevao.png" alt=" " class="img-fluid" />
+								</div>
+								<div class="col-md-9 testimonials_grid text-left">
+									<h3>Estevão Moura
+										<span>Customer</span>
+									</h3>
+									<i>United States</i>
+									<p>Maecenas interdum, metus vitae tincidunt porttitor,Proin eget gravida odio. Donec ullamcorper est eu magna quam
+										egestas sem, ac scelerisque nisl nibh vel lacus. Proin eget gravida odio. Donec ullamcorper est eu accumsan cursus.</p>
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="row">
+								<div class="col-md-3 testimonials_grid-inn">
+
+
+									<img src="images/raquel.png" alt=" " class="img-fluid" />
+								</div>
+								<div class="col-md-9 testimonials_grid text-left">
+									<h3>Raquel Martins
+										<span>Customer</span>
+									</h3>
+									<i>United States</i>
+									<p>Maecenas interdum, metus vitae tincidunt porttitor,Proin eget gravida odio. Donec ullamcorper est eu magna quam
+										egestas sem, ac scelerisque nisl nibh vel lacus. Proin eget gravida odio. Donec ullamcorper est eu accumsan cursus.</p>
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="row">
+								<div class="col-md-3 testimonials_grid-inn">
+
+
+									<img src="images/livany.png" alt=" " class="img-fluid" />
+								</div>
+								<div class="col-md-9 testimonials_grid text-left">
+									<h3>Livany Nunes
+										<span>Customer</span>
+									</h3>
+									<i>United States</i>
+									<p>Maecenas interdum, metus vitae tincidunt porttitor,Proin eget gravida odio. Donec ullamcorper est eu magna quam
+										egestas sem, ac scelerisque nisl nibh vel lacus. Proin eget gravida odio. Donec ullamcorper est eu accumsan cursus.</p>
+								</div>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!---->
+	<!--//inner-content-->
+
+
+
+	<!--footer-->
+	<footer>
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-4 footer-grid text-left" data-aos="fade-right">
+					<div class="read">
+						<img src="images/logocentro.svg" alt="">
+					</div>
+				</div>
+				<!-- subscribe -->
+				<div class="col-lg-8 subscribe-main footer-grid text-left" data-aos="fade-left">
+					<h2>Receba nossas promoções</h2>
+					<div class="subscribe-main text-left">
+						<div class="subscribe-form">
+							<form action="#" method="post" class="subscribe_form">
+								<input class="form-control" type="email" placeholder="Email" required="">
+								<button type="submit" class="btn btn-primary submit">Submit</button>
+							</form>
+						</div>
+						<p class="mt-3">Fique por dentro de eventos e promoções que rolam na nossa casa.</p>
+					</div>
+					<!-- //subscribe -->
+					<div class="footer-cpy text-left">
+						<div class="copyrighttop">
+							<ul>
+								<li class="mx-lg-3 mx-md-2 mx-1">
+									<a class="facebook" href="#">
+										<i class="fab fa-facebook-f"></i>
+										<span>Facebook</span>
+									</a>
+								</li>
+								<li>
+									<a class="facebook" href="#">
+										<i class="fab fa-pinterest-p"></i>
+										<span>Pinterest</span>
+									</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- //footer -->
+		</div>
+	</footer>
+	<!---->
+
+	<!-- js -->
+	<script src="js/jquery-2.2.3.min.js"></script>
+	<!-- //js -->
+	<!-- /flexisel -->
+	<script>
+		$(window).load(function () {
+			$("#flexiselDemo1").flexisel({
+				visibleItems: 4,
+				animationSpeed: 1000,
+				autoPlay: true,
+				autoPlaySpeed: 3000,
+				pauseOnHover: true,
+				enableResponsiveBreakpoints: true,
+				responsiveBreakpoints: {
+					portrait: {
+						changePoint: 480,
+						visibleItems: 1
+					},
+					landscape: {
+						changePoint: 640,
+						visibleItems: 2
+					},
+					tablet: {
+						changePoint: 768,
+						visibleItems: 3
+					}
+				}
+			});
+
+		});
+	</script>
+	<script src="js/jquery.flexisel.js"></script>
+	<!-- //flexisel -->
+	<!-- flexSlider -->
+	<script defer src="js/jquery.flexslider.js"></script>
+	<script>
+		$(window).load(function () {
+			$('.flexslider').flexslider({
+				animation: "slide",
+				start: function (slider) {
+					$('body').removeClass('loading');
+				}
+			});
+		});
+	</script>
+
+	<!-- //flexSlider -->
+
+	<!-- simpleLightbox -->
+	<script src="js/simpleLightbox.js"></script>
+	<script>
+		$('.proj_gallery_grid a').simpleLightbox();
+	</script>
+	<!-- //simpleLightbox -->
+	<!-- /js files -->
+	<link href='css/aos.css' rel='stylesheet prefetch' type="text/css" media="all" />
+	<link href='css/aos-animation.css' rel='stylesheet prefetch' type="text/css" media="all" />
+	<script src='js/aos.js'></script>
+	<script src="js/aosindex.js"></script>
+	<!-- //js files -->
+	<!--/ start-smoth-scrolling -->
+	<script src="js/move-top.js"></script>
+	<script src="js/easing.js"></script>
+	<script>
+		jQuery(document).ready(function ($) {
+			$(".scroll").click(function (event) {
+				event.preventDefault();
+				$('html,body').animate({
+					scrollTop: $(this.hash).offset().top
+				}, 900);
+			});
+		});
+	</script>
+	<!--// end-smoth-scrolling -->
+
+	<script>
+		$(document).ready(function () {
+			/*
+									var defaults = {
+							  			containerID: 'toTop', // fading element id
+										containerHoverID: 'toTopHover', // fading element hover id
+										scrollSpeed: 1200,
+										easingType: 'linear'
+							 		};
+									*/
+
+			$().UItoTop({
+				easingType: 'easeOutQuart'
+			});
+
+		});
+	</script>
+	<a href="#home" class="scroll" id="toTop" style="display: block;">
+		<span id="toTopHover" style="opacity: 1;"> </span>
+	</a>
+	<!-- //Custom-JavaScript-File-Links -->
+	<script src="js/bootstrap.js"></script>
+
+
+</body>
+
 </html>
