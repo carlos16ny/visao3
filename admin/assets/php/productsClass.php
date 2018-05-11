@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 	require_once 'assets/php/database.php';
 
@@ -20,28 +20,65 @@
 			try {
 				$stmt->execute();
 				return $stmt;
-				
-			} catch (PDOException $e) {
+			}
+			catch (PDOException $e) {
 				echo $e->getMessage();
 				return null;
 			}
 		}
 
 		public function refrigerantesList(){
-
-			$query = 'SELECT * FROM products WHERE category = "refrigerante" ';
+s			$query = 'SELECT * FROM products WHERE category = "refrigerante" ';
 			$stmt = $this->conn->prepare($query);
 
 			try {
 				$stmt->execute();
 				return $stmt;
-				
+
 			} catch (PDOException $e) {
 				echo $e->getMessage();
 				return null;
 			}
 		}
-		
+
+		public function bebidasList(){
+
+			$query = 'SELECT FROM products WHERE category = "bebida" ';
+			$stmt  = $this->conn->prepare($query);
+
+			try {
+				$stmt->execute();
+				return $stmt;
+
+			}
+			catch (PDOException $e) {
+				echo $e->getMessage();
+				return null;
+			}
+
+		}
+
+		public function acrescimosList(){
+
+			$query = 'SELECT FROM products WHERE category = "acrescimo" ';
+			$stmt = $this->conn->prepare($query);
+
+			try {
+				$stmt->execute();
+				return $stmt;
+			}
+			catch (PDOException $e) {
+				echo $e->getMessage();
+
+
+
+
+				return null;
+			}
+
+		}
+
+
 
 	}
 

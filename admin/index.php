@@ -1,3 +1,9 @@
+<?php
+
+	$erro = isset($_GET['erro']) ? $_GET['erro'] : 0;
+
+ ?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -34,6 +40,7 @@
 				</div>
 
 				<style media="screen">
+
 					.navbar-img-brand{
 						width: 115px;
 						height: 95px;
@@ -59,32 +66,34 @@
 		</div>
 	</header>
 
-	<section class="banner-bottom">
-		<div class="container">
+	<section class="banner-bottom yellow-bg">
+		<div class="container yellow-bg">
 			<h3 class="tittle">Login Funcionários</h3>
 			<div class="row inner-sec">
 				<div class="login p-5 bg-dark mx-auto mw-100">
-					<form action="#" method="post">
+					<form action="assets/php/auth.php" method="post">
 						<div class="form-group">
-							<label for="exampleInputEmail1 mb-2">Usuário</label>
-							<input type="email" class="form-control" id="user" aria-describedby="emailHelp" placeholder="user" required="">
+							<label>Usuário</label>
+							<input type="text" class="form-control" id="user" name="user" placeholder="user" required="">
 						</div>
 						<div class="form-group">
-							<label for="exampleInputPassword1 mb-2">Senha</label>
-							<input type="password" class="form-control" id="password" placeholder="senha" required="">
+							<label>Senha</label>
+							<input type="password" class="form-control" id="pass" placeholder="senha" required="" name="pass">
 						</div>
 						<div class="form-group mb-2">
-							<label for="exampleInputPassword1 mb-2">Função</label>
-							<select class="form-control" name="">
+							<label>Função</label>
+							<select class="form-control" name="func">
 								<option value="admin">Administrador</option>
 								<option value="waiter">Garçom</option>
 								<option value="cashier">Caixa</option>
 							</select>
 						</div>
 						<button type="submit" class="btn btn-primary submit mb-4 mt-4">Let's cook</button>
-						<p>
-							<a>Contate o administrador para recuperar senha</a>
-						</p>
+						<?php
+						if($erro == 4){	?>
+							<p style="color: red;">Senha e/ou usuário incorreto(s)</p>
+						<?php } ?>
+
 					</form>
 				</div>
 			</div>
@@ -104,7 +113,7 @@
 	<!--/ start-smoth-scrolling -->
 	<script src="../js/move-top.js"></script>
 	<script src="j../s/easing.js"></script>
-	
+
 
 
 	<!-- //Custom-JavaScript-File-Links -->

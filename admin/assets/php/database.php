@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 class database{
 
@@ -9,8 +9,8 @@ class database{
 	public $conn;
 
 	public function connection(){
-		$this->conn = null;
 
+		$this->conn = null;
 
 		try {
             $this->conn = new PDO("mysql:host=" . $this->host . ";dbname=" . $this->db_name, $this->user, $this->pass, array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES 'utf8'"));

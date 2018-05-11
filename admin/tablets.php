@@ -24,7 +24,6 @@
 					$table = $tables->tablesList();
 
 					while($row = $table->fetch(PDO::FETCH_OBJ)) { ?>
-
 					<tr>
 						<td><?php echo "Mesa " . $row->id_table ?></td>
 						<?php if($row->status == "0"){ ?>
