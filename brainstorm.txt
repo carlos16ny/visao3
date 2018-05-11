@@ -1,0 +1,16 @@
+8 garçons
+3 caixas
+1 admin
+(2 comandas)
+
+*meia pizza
+
+*fator de correção
+P: 0,5
+M: 0,7
+G: 1
+F: 1,3
+
+*excluir pedido
+
+
