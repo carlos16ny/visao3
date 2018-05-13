@@ -1,0 +1,286 @@
+@import url(https://fonts.googleapis.com/css?family=Lato:300,400);
+/* Grid System */
+
+* {box-sizing: border-box;}
+
+.container {
+  max-width: 1020px;
+  position: relative;
+  margin: 0 auto;
+  padding: 0 10px;
+  zoom: 1;
+  /* For IE 6/7 (trigger hasLayout) */
+}
+
+.container:before,
+.container:after {
+  content: "";
+  display: table;
+}
+
+.container:after {
+  clear: both;
+}
+
+.row {
+  zoom: 1;
+  /* For IE 6/7 (trigger hasLayout) */
+}
+
+.row:before,
+.row:after {
+  content: "";
+  display: table;
+}
+
+.row:after {
+  clear: both;
+}
+
+.columns {
+  float: left;
+  display: block;
+  margin-left: 1.5%;
+  margin-bottom: 18px;
+  vertical-align: top;
+}
+
+.columns:first-child {
+  margin-left: 0;
+}
+
+.columns.six {
+  width: 49.25%;
+}
+
+/* Main Body */
+html {
+  height: 101%; /*added to stop the page jumping left when it adds the scroll bar */
+}
+
+body {
+  font-family: 'Lato', 'Arial', sans-serif;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 1.4;
+  background: #5abccc;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.column,
+.columns {
+  color: #ffffff;
+  text-align: center;
+}
+
+h3 {
+  color: #ffffff;
+  background: #47525d;
+  margin: 20px 0;
+  padding: 10px;
+}
+/* Menu Bar */
+
+header {
+  background: #fff;
+  padding: 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  -webkit-box-shadow: 1px 1px 2px 3px #ccc;
+  /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
+  
+  -moz-box-shadow: 1px 1px 2px 3px #ccc;
+  /* Firefox 3.5 - 3.6 */
+  
+  box-shadow: 1px 1px 2px 3px #ccc;
+  z-index: 1000;
+}
+
+.main-menu-icon {
+  float: right;
+  font-size: 38px;
+  cursor: pointer;
+}
+/* Off Screen Nav */
+
+section.offscreen-menu {
+  background: #004F8F;
+  background: rgba(0, 79, 143, 0.9);
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  height: 100vh;
+  overflow-y: scroll;
+  padding-top: 100px;
+  top: 0;
+  left: 0;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-overflow-scrolling: touch;
+  -webkit-transform: translate(0, -150%);
+  transform: translate(0, -150%);
+  transition: all 1s;
+  z-index: 500;
+}
+
+section.offscreen-menu.open {
+  -webkit-transform: translate(0, 0);
+  transform: translate(0, 0);
+}
+/*Menu Options */
+
+h4 {
+  padding: 10px 0;
+  transition: all 1s;
+  cursor: pointer;
+}
+
+h4.submenu-open {
+  background: #418838;
+}
+
+ul.main-menu {
+  position: relative;
+}
+
+ul.main-menu li,
+ul.site-options li {
+  margin: 20px 0;
+}
+
+ul.main-menu li ul {
+  color: #73b73e;
+  display: none;
+  position: relative;
+  max-height: 1000px;
+  /*fallback for FireFox */
+  
+  height: 100%;
+}
+
+ul.main-menu li ul.open {
+  display: block;
+}
+
+ul.main-menu li i {
+  transition: all 0.5s;
+  position: absolute;
+  right: 10px;
+}
+
+ul.main-menu li i.closed {
+  transform: rotate(0deg);
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+}
+
+ul.main-menu li i.open {
+  transform: rotate(-180deg);
+  -webkit-transform: rotate(-180deg);
+  -moz-transform: rotate(-180deg);
+}
+
+@media screen and (max-width: 550px) {
+  .columns.six {
+    width: 100%;
+    margin: 10px 0;
+  }
+}
+
+div {
+  /* border: 1px solid red; */
+}
+
+table {
+  border-collapse: separate;
+  border-spacing: 0 8px;
+  margin-top: -8px;
+}
+
+td {
+  border: 1px solid green;
+  border-left-width: 0;
+  min-width: 120px;
+  height: 18px;
+}
+
+td:first-child {
+  border-left-width: 1px;
+}
+
+.table-number{
+  color:orange;
+
+}
+
+ /* Customize the label (the container) */
+.container {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default checkbox */
+.container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #eee;
+}
+
+/* On mouse-over, add a grey background color */
+.container:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+/* When the checkbox is checked, add a blue background */
+.container input:checked ~ .checkmark {
+  background-color: #2196F3;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.container .checkmark:after {
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+} 
