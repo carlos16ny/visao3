@@ -26,7 +26,7 @@
         $dados = $stmt->fetchAll(PDO::FETCH_OBJ)[0];
         $_SESSION['user'] = $dados->user;
         $_SESSION['user_id'] = $dados->id;
-        header('Location: ../../home.php');
+        header('Location: ../../menu.php');
       }
     } catch (PDOException $e) {
         echo $e->getMessage();
@@ -45,7 +45,7 @@
         $dados = $stmt->fetchAll(PDO::FETCH_OBJ)[0];
         $_SESSION['user'] = $dados->user;
         $_SESSION['user_id'] = $dados->id;
-        header('Location: ../../home.php');
+        header('Location: ../../menu.php');
       }
     } catch (PDOException $e) {
       echo $e->getMessage();
@@ -64,7 +64,7 @@
         $dados = $stmt->fetchAll(PDO::FETCH_OBJ)[0];
         $_SESSION['user'] = $dados->user;
         $_SESSION['user_id'] = $dados->id;
-        header('Location: ../../home.php');
+        header('Location: ../../menu.php');
       }
     } catch (PDOException $e) {
       echo $e->getMessage();
