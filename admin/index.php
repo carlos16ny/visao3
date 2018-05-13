@@ -28,7 +28,19 @@
 </head>
 
 <body>
-	<!--/banner-->
+	<?php
+		if($erro == 4){	?>
+			<div class="alert alert-danger" role="alert">
+			<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    			<span aria-hidden="true">&times;</span>
+ 			</button>
+			<h4 class="alert-heading">Erro de Login</h4>
+			<p>Senha e/ou usuário errados</p>
+			<p class="mb-0">solicite suporte ao administrador</p>
+			  
+			</div>
+	<?php } ?>
+
 	<header>
 		<div class="top-bar_sub container-fluid pt-2 pb-2">
 			<div class="row ">
@@ -74,26 +86,21 @@
 					<form action="assets/php/auth.php" method="post">
 						<div class="form-group">
 							<label>Usuário</label>
-							<input type="text" class="form-control" id="user" name="user" placeholder="user" required="">
+							<input type="text" class="form-control" id="user" name="user" placeholder="user" required >
 						</div>
 						<div class="form-group">
 							<label>Senha</label>
-							<input type="password" class="form-control" id="pass" placeholder="senha" required="" name="pass">
+							<input type="password" class="form-control" id="pass" placeholder="senha" name="pass" required>
 						</div>
 						<div class="form-group mb-2">
 							<label>Função</label>
 							<select class="form-control" name="func">
 								<option value="admin">Administrador</option>
-								<option value="waiter">Garçom</option>
+								<option value="waiters">Garçom</option>
 								<option value="cashier">Caixa</option>
 							</select>
 						</div>
-						<button type="submit" class="btn btn-primary submit mb-4 mt-4">Let's cook</button>
-						<?php
-						if($erro == 4){	?>
-							<p style="color: red;">Senha e/ou usuário incorreto(s)</p>
-						<?php } ?>
-
+						<button type="submit" id="btn-login" class="btn btn-primary submit mb-4 mt-4">Let's cook</button>
 					</form>
 				</div>
 			</div>

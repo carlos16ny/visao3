@@ -34,7 +34,7 @@
 						<td><?php echo $row->name ?></td>
 						<td><?php echo $row->stock ?></td>
 						<td><?php echo $row->price ?></td>
-						<td><img class="img-thumbnail img-fluid img-responsive"  src=<?php echo $row->img ?>></td>
+						<td><img class="img-thumbnail img-fluid img-responsive" style="height: 50px; width:50px;" src=<?php echo $row->img ?>></td>
 					</tr>
 			
 				 <?php 

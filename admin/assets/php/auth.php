@@ -1,5 +1,7 @@
 <?php
 
+  session_start();
+
   require_once 'database.php';
 
   $objDB = new database();
@@ -10,53 +12,64 @@
   $pass = $_POST['pass'];
   $func = $_POST['func'];
 
-  $stmt = null;
+  $_SESSION['function'] = $func;
 
   if($func == 'admin'){
     $query =  "SELECT * FROM admin WHERE password = '$pass' AND  user = '$user' ";
     $stmt = $conn->prepare($query);
+
     try {
       $stmt->execute();
       if($stmt->rowCount() == 0){
         header('Location: ../../index.php?erro=4');
+      } else{
+        $dados = $stmt->fetchAll(PDO::FETCH_OBJ)[0];
+        $_SESSION['user'] = $dados->user;
+        $_SESSION['user_id'] = $dados->id;
+        header('Location: ../../home.php');
       }
-      return $stmt;
     } catch (PDOException $e) {
-      echo $e->getMessage();
-    }
-
-
-  }
-
-  else if($func == 'cashier'){
-    $query =  "SELECT * FROM cashier WHERE password = '$pass' AND  user = '$user' ";
-    $stmt = $conn->prepare($query);
-    try {
-      $stmt->execute();
-      if($stmt->rowCount() == 0){
-        header('Location: ../../index.php?erro=4');
-      }
-      return $stmt;
-    } catch (PDOException $e) {
-      echo $e->getMessage();
+        echo $e->getMessage();
     }
 
   }
 
-  else if($func == 'waiter'){
+  else if($func == 'waiters'){
     $query =  "SELECT * FROM waiters WHERE password = '$pass' AND  user = '$user' ";
     $stmt = $conn->prepare($query);
     try {
       $stmt->execute();
       if($stmt->rowCount() == 0){
         header('Location: ../../index.php?erro=4');
+      } else{
+        $dados = $stmt->fetchAll(PDO::FETCH_OBJ)[0];
+        $_SESSION['user'] = $dados->user;
+        $_SESSION['user_id'] = $dados->id;
+        header('Location: ../../home.php');
       }
-      return $stmt;
     } catch (PDOException $e) {
       echo $e->getMessage();
       return null;
     }
+  }
 
+  else if($func == 'cashier'){
+    $query =  "SELECT * FROM cachier WHERE password = '$pass' AND  user = '$user' ";
+    $stmt = $conn->prepare($query);
+    try {
+      $stmt->execute();
+      if($stmt->rowCount() == 0){
+        header('Location: ../../index.php?erro=4');
+      } else{
+        $dados = $stmt->fetchAll(PDO::FETCH_OBJ)[0];
+        $_SESSION['user'] = $dados->user;
+        $_SESSION['user_id'] = $dados->id;
+        header('Location: ../../home.php');
+      }
+    } catch (PDOException $e) {
+      echo $e->getMessage();
+      return null;
+    }
   }
 
 

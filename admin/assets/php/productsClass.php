@@ -14,7 +14,7 @@
 
 		public function pizzasList(){
 
-			$query = 'SELECT * FROM products WHERE category = "pizza" ';
+			$query = 'SELECT * FROM products WHERE category = "pizzas" ORDER BY price ASC ';
 			$stmt = $this->conn->prepare($query);
 
 			try {
@@ -28,7 +28,8 @@
 		}
 
 		public function refrigerantesList(){
-s			$query = 'SELECT * FROM products WHERE category = "refrigerante" ';
+
+			$query = "SELECT * FROM products WHERE category = 'refrigerantes' ORDER BY price ASC ";
 			$stmt = $this->conn->prepare($query);
 
 			try {
@@ -43,7 +44,7 @@ s			$query = 'SELECT * FROM products WHERE category = "refrigerante" ';
 
 		public function bebidasList(){
 
-			$query = 'SELECT FROM products WHERE category = "bebida" ';
+			$query = 'SELECT FROM products WHERE category = "bebidas" ORDER BY price ASC ';
 			$stmt  = $this->conn->prepare($query);
 
 			try {
@@ -60,7 +61,27 @@ s			$query = 'SELECT * FROM products WHERE category = "refrigerante" ';
 
 		public function acrescimosList(){
 
-			$query = 'SELECT FROM products WHERE category = "acrescimo" ';
+			$query = 'SELECT FROM products WHERE category = "acrescimos" ORDER BY price ASC ';
+			$stmt = $this->conn->prepare($query);
+
+			try {
+				$stmt->execute();
+				return $stmt;
+			}
+			catch (PDOException $e) {
+				echo $e->getMessage();
+
+
+
+
+				return null;
+			}
+
+		}
+
+		public function sucosList(){
+
+			$query = 'SELECT FROM products WHERE category = "sucos" ORDER BY price ASC ';
 			$stmt = $this->conn->prepare($query);
 
 			try {
@@ -79,10 +100,7 @@ s			$query = 'SELECT * FROM products WHERE category = "refrigerante" ';
 		}
 
 
-
 	}
-
-
 
 
  ?>

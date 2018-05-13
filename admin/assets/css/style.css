@@ -1,0 +1,29 @@
+.bg-1{
+    background: rgba(255,0,0,1);
+}
+
+.bg-2{
+    background: rgb(255, 205, 41);
+}
+
+.bg-3{
+    background: rgb(4, 204, 4);
+}
+
+.bg-4{
+    background: blue;
+}
+
+.bg-5{
+    background: grey;
+}
+
+.bg-6{
+    background: tomato;
+}
+
+.text-menu{
+    font-weight: 700;
+    color: white;
+    text-shadow: 2px 1px 1px black;
+}
