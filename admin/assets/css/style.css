@@ -27,3 +27,7 @@
     color: white;
     text-shadow: 2px 1px 1px black;
 }
+
+.w, .c{
+    display: none;
+}

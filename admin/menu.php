@@ -1,6 +1,20 @@
 <?php
 
     session_start();
+
+    if(!isset($_SESSION['user_id'])){
+        header('Location: ../404.php?erro=101');
+    }
+
+    $c="";
+    $w="";
+
+
+    if($_SESSION['function']=='cashier'){ 
+        $c = "c";
+    }else if($_SESSION['function']=='waiters'){
+        $w = "w";
+    }
     
 ?>
 
@@ -19,9 +33,10 @@
     <link rel="stylesheet" href="assets/css/style.css">
   </head>
   <body>
+      
       <div class="container mt-4 pt-4">
         <div class="row">
-          <div class="col-md-4 col-sm-6 bg-1 mb-3 br-3" role="button">
+          <div class="col-md-4 col-sm-6 bg-1 mb-3 br-3 <?=$c?>" role="button">
               <a href="func/tables.php"><i class="fas fa-utensils fa-10x py-4 px-4" style="color: #fff"></i></a>
               <h2 class="h2 pb-3 px-4 text-menu">Mesas</h1>
           </div>
@@ -29,32 +44,25 @@
               <a href="func/orders.php"><i class="fas fa-receipt fa-10x py-4 px-4" style="color: #fff"></i></a>
               <h2 class="h2 pb-3 px-4 text-menu">Comandas</h1>
           </div>
-          <div class="col-md-4 col-sm-6 bg-3 mb-3">
-              <a href="func/tips.php"><i class="fas fa-coins fa-10x py-4 px-4" style="color: #fff"></i></a>
+          <div class="col-md-4 col-sm-6 bg-3 mb-3 <?=$c?>">
+              <a href="func/tips.php"><i class="fas fa-coins fa-10x py-4 px-4 " style="color: #fff"></i></a>
               <h2 class="h2 pb-3 px-4 text-menu">Gorjetas</h1>
           </div>
-          <div class="col-md-4 col-sm-6 bg-4 mb-3">
+          <div class="col-md-4 col-sm-6 bg-4 mb-3 <?=$w?>">
               <a href="func/cashier.php"><i class="fas fa-donate fa-10x py-4 px-4" style="color: #fff"></i></a>
               <h2 class="h2 pb-3 px-4 text-menu">Caixa</h1>
           </div>
-          <div class="col-md-4 col-sm-6 bg-5 mb-3">
+          <div class="col-md-4 col-sm-6 bg-5 mb-3 <?=$w . " " .$c?>">
               <a href="func/report.php"><i class="fas fa-chart-line fa-10x py-4 px-4" style="color: #fff"></i></a>
               <h2 class="h2 pb-3 px-4 text-menu">Relatórios</h1>
           </div>
+
           <div class="col-md-4 col-sm-6 bg-6 mb-3">
               <a href="func/logout.php"><i class="fas fa-arrow-circle-right fa-10x py-4 px-4" style="color: #fff"></i></a>
               <h2 class="h2 pb-3 px-4 text-menu">Sair</h1>
           </div>
         </div>
       </div>
-
-    <?php
-
-        echo $_SESSION['user'];
-        echo $_SESSION['user_id'];
-        echo $_SESSION['function'];
-
-    ?>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

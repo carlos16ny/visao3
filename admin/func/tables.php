@@ -1,5 +1,24 @@
+    <?php
+
+        session_start();
+
+        if(!isset($_SESSION['user_id'])){
+            header('Location: ../../404.php?erro=101');
+        }
+        
+        require_once '../assets/php/tablesClass.php';
+        
+        $mesas = new Tables();
+        $mesa = $mesas->tablesList();
+
+        $error = isset($_GET['erro']) ? $_GET['erro'] : 0;
+
+
+    ?>    
+
+
 <!doctype html>
-<html lang="en">
+<html lang="pt-br">
   <head>
     <title>Mesas</title>
     <!-- Required meta tags -->
@@ -11,15 +30,17 @@
   </head>
   <body>
 
+
     <?php
-
-        require_once '../assets/php/tablesClass.php';
-        
-        $mesas = new Tables();
-        $mesa = $mesas->tablesList();
-
-
-    ?>    
+		if($erro == 101){	?>
+			<div class="alert alert-danger" role="alert">
+			<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    			<span aria-hidden="true">&times;</span>
+ 			</button>
+			<h4 class="alert-heading">Erro ao capturar mesa</h4>
+			<p>verifique a conexão com o banco de dados e tente novamente</p> 
+			</div>
+	<?php } ?>
 
     <nav class="navbar navbar-expand-lg navbar-light bg-warning">
         <a class="navbar-brand" href="#">TechPizza</a>
@@ -29,11 +50,11 @@
         </button>
         <div class="collapse navbar-collapse" id="collapsibleNavId">
             <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-                <li class="nav-item active">
-                    <a class="nav-link" href="../menu.php">Voltar<span class="sr-only">(current)</span></a>
+                <li class="nav-item active mr-4">
+                    <a class="nav-link btn btn-primary" href="../menu.php">Voltar<span class="sr-only">(current)</span></a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Link</a>
+                <li class="nav-item mr-4">
+                    <a class="nav-link btn btn-primary" href="orders.php">Comandas<span class="sr-only"></span></a>
                 </li>
         </div>
     </nav>
@@ -42,34 +63,38 @@
 
         <?php while($row = $mesa->fetch(PDO::FETCH_OBJ)) { ?>
         
-        <div class="col-6 col-sm-4 col-md-3">
+        <div class="col-6 col-sm-3 col-md-2">
             <?php if ($row->status == 0) { ?>
                 <div class="card text-center my-3">
                     <div style="background: url(../assets/imgs/livre.svg">
+                        <form class="form" method="POST" action="verify.php">
+                            <div class="form-group mt-3 pt-4 w-100" style="position: absolute;">
+                                <input type="hidden" name="id_table" value='<?=$row->id_table?>'>
+                                <button name="" id="" class="btn btn-success mx-auto" role="button" type="submit"><?= "MESA " . $row->id_table?></button>
+                            </div>
+                        </form>
                         <div style="background: white; border-radius: 50%;">
                             <img class="card-img-top py-4 px-4" src="../assets/imgs/mesa.png" alt="">
                         </div>
-                    </div>
-                    <div class="card-body">
-                        <h4 class="card-title"><?php echo 'MESA ' . $row->id_table ?></h4>
-                        <a name="" id="" class="btn btn-success" href="#" role="button">Entrar</a>
                     </div>
                 </div>
             <?php } else { ?>
                 <div class="card text-center my-3">
                     <div style="background: url(../assets/imgs/ocupada.svg">
+                        <form class="form" method="POST" action="verify.php">
+                            <div class="form-group mt-3 pt-4 w-100" style="position: absolute;">
+                                <input type="hidden" name="id_table" value='<?=$row->id_table?>'>
+                                <button name="" id="" class="btn btn-danger mx-auto" role="button" type="submit"><?= "MESA " . $row->id_table?></button>
+                            </div>
+                        </form>
                         <div style="background: white; border-radius: 50%;">
                             <img class="card-img-top py-4 px-4" src="../assets/imgs/mesa.png" alt="">
                         </div>
                     </div>
-                    <div class="card-body">
-                        <h4 class="card-title"><?php echo 'MESA ' .$row->id ?></h4>
-                        <a name="" id="" class="btn btn-danger" href="#" role="button">Entrar</a>
-                    </div>
                 </div>
             <?php } ?>
         </div>
-            <?php } ?>
+        <?php } ?>
 
     </div>
       

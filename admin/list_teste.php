@@ -68,7 +68,7 @@
 						<td><?php echo $row->name ?></td>
 						<td><?php echo $row->stock ?></td>
 						<td><?php echo $row->price ?></td>
-						<td><img class="img-thumbnail img-fluid img-responsive"  src=<?php echo $row->img ?>></td>
+						<td><img class="img-thumbnail img-fluid img-responsive" style="width:100px; height: 100px"e  src=<?php echo $row->img ?>></td>
 					</tr>
 			
 				 <?php 

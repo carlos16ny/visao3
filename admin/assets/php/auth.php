@@ -54,7 +54,7 @@
   }
 
   else if($func == 'cashier'){
-    $query =  "SELECT * FROM cachier WHERE password = '$pass' AND  user = '$user' ";
+    $query =  "SELECT * FROM cashier WHERE password = '$pass' AND  user = '$user' ";
     $stmt = $conn->prepare($query);
     try {
       $stmt->execute();
