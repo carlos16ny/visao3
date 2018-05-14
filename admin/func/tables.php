@@ -64,7 +64,7 @@
         <div class="col-6 col-sm-3 col-md-2">
             <?php if ($row->status == 0) { ?>
                 <div class="card text-center my-3">
-                    <div style="background: url(../assets/imgs/livre.svg">
+                    <div style="background: url(../assets/imgs/livre.svg);">
                         <form class="form" method="POST" action="verify.php">
                             <div class="form-group mt-3 pt-4 w-100" style="position: absolute;">
                                 <input type="hidden" name="id_table" value='<?=$row->id_table?>'>

@@ -6,7 +6,7 @@
     require_once '../assets/php/request.php';
 
     if(!isset($_SESSION['user_id'])){
-        header('Location: ../404.php');
+        header('Location: ../../404.php?erro=101');
     }
 
     if(isset($_POST['id_table'])){
