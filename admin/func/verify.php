@@ -3,15 +3,31 @@
     session_start();
 
     require_once '../assets/php/tablesClass.php';
+    require_once '../assets/php/request.php';
 
     if(!isset($_SESSION['user_id'])){
         header('Location: ../404.php');
     }
 
     if(!isset($_POST['id_table'])){
+
         header('Location: tables.php?erro=101');
+
     }else{
-        $table_id = $_POST['id_table'];    
+
+        $table_id = $_POST['id_table'];
+
+        if(isset($_POST['nova']) or isset($_POST['listar'])){
+
+            $request = new Request();
+            $comanda = $request->comandas($table_id);
+            
+
+        }else if(isset($_POST['fechar'])){
+
+            
+
+        }    
     }
 
 
@@ -57,7 +73,7 @@
         </div>
     </nav>   
 
-    <form action="singletable.php" method="post">
+    <form action="verify.php" method="post">
         <input type="hidden" name="id_table" value='<?=$table_id?>'>
         <button class="btn btn-primary w-100 btn-lg py-4 h-2 d-inline-block my-2" type="submit" name="nova">Abrir Comanda</button>
         <button class="btn btn-success w-100 btn-lg py-4 h-2 d-inline-block my-2" type="submit" name="listar">Listar</button>

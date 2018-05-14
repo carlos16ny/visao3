@@ -26,7 +26,8 @@ class Request{
         try{
             $stmt->execute();
             if($stmt->rowCount() == 0){
-                newRequest($request_table_id);
+                $this->newRequest($request_table_id);
+                return null;
             } else {
                 return $stmt->fetch();
             }
@@ -34,9 +35,6 @@ class Request{
             echo $e->getMessage;
         }
     
-
-
-
     }
 
     public function newRequest($request_table_id){
