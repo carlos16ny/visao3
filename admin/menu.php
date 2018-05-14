@@ -34,7 +34,7 @@
   </head>
   <body>
       
-      <div class="container mt-4 pt-4">
+      <div class="container mt-4">
         <div class="row">
           <div class="col-md-4 col-sm-6 bg-1 mb-3 br-3 <?=$c?>" role="button">
               <a href="func/tables.php"><i class="fas fa-utensils fa-10x py-4 px-4" style="color: #fff"></i></a>

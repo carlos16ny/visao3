@@ -90,10 +90,6 @@
 			}
 			catch (PDOException $e) {
 				echo $e->getMessage();
-
-
-
-
 				return null;
 			}
 

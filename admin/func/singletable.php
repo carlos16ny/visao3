@@ -3,6 +3,7 @@
     session_start();
 
     require_once '../assets/php/tablesClass.php';
+    require_once '../assets/php/request.php';
 
     if(!isset($_SESSION['user_id'])){
         header('Location: ../404.php');
@@ -12,22 +13,23 @@
 
         $table_id = $_POST['id_table'];
 
-        $table = new Tables();
-        $table->setId($table_id);
-        
+        $request = new Request();
+            
         if(isset($_POST['nova'])){
-            $table->ocupar();
+
+            $request->comandas($table_id);
+
         }else if(isset($_POST['listar'])){
-            $table->vagar();
+
+            
         }else if(isset($_POST['fechar'])){
+
+
 
         }
     }
-    
-
 
 ?>
-
 <!doctype html>
 <html lang="pt-br">
   <head>
@@ -41,7 +43,6 @@
   </head>
   <body>
 
-      <?php  echo $table_id; ?>
       
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

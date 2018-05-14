@@ -53,9 +53,7 @@
                 <li class="nav-item active mr-4">
                     <a class="nav-link btn btn-primary" href="tables.php">Voltar<span class="sr-only">(current)</span></a>
                 </li>
-                <li class="nav-item mr-4">
-                    <a class="nav-link btn btn-primary" href="orders.php">Comandas<span class="sr-only"></span></a>
-                </li>
+            </ul>
         </div>
     </nav>   
 
@@ -65,6 +63,12 @@
         <button class="btn btn-success w-100 btn-lg py-4 h-2 d-inline-block my-2" type="submit" name="listar">Listar</button>
         <button class="btn btn-danger w-100 btn-lg  py-4 h-2 d-inline-block my-2" type="submit" name="fechar">Fechar Comanda</button>
     </form>
+
+        <?=$table_id?>
+        <br>
+        <?=$_SESSION['user']?>
+        <br>
+        <?=$_SESSION['user_id']?>
 
 
     <!-- Optional JavaScript -->

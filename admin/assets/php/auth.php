@@ -15,8 +15,9 @@
   $_SESSION['function'] = $func;
 
   if($func == 'admin'){
-    $query =  "SELECT * FROM admin WHERE password = '$pass' AND  user = '$user' ";
+    $query =  "SELECT * FROM admin WHERE user = '$user' AND password = :pass";
     $stmt = $conn->prepare($query);
+    $stmt->bindParam(":pass", md5($pass));
 
     try {
       $stmt->execute();
@@ -35,7 +36,7 @@
   }
 
   else if($func == 'waiters'){
-    $query =  "SELECT * FROM waiters WHERE password = '$pass' AND  user = '$user' ";
+    $query =  "SELECT * FROM waiters WHERE password = md5($pass) AND  user = '$user' ";
     $stmt = $conn->prepare($query);
     try {
       $stmt->execute();
@@ -54,7 +55,7 @@
   }
 
   else if($func == 'cashier'){
-    $query =  "SELECT * FROM cashier WHERE password = '$pass' AND  user = '$user' ";
+    $query =  "SELECT * FROM cashier WHERE password = md5($pass) AND  user = '$user' ";
     $stmt = $conn->prepare($query);
     try {
       $stmt->execute();

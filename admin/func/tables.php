@@ -51,11 +51,9 @@
         <div class="collapse navbar-collapse" id="collapsibleNavId">
             <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
                 <li class="nav-item active mr-4">
-                    <a class="nav-link btn btn-primary" href="../menu.php">Voltar<span class="sr-only">(current)</span></a>
+                    <a class="nav-link btn btn-primary mb-2" href="../menu.php">Voltar<span class="sr-only">(current)</span></a>
                 </li>
-                <li class="nav-item mr-4">
-                    <a class="nav-link btn btn-primary" href="orders.php">Comandas<span class="sr-only"></span></a>
-                </li>
+            </ul>
         </div>
     </nav>
 
