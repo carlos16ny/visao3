@@ -44,7 +44,7 @@
 
 		public function bebidasList(){
 
-			$query = 'SELECT FROM products WHERE category = "bebidas" ORDER BY price ASC ';
+			$query = 'SELECT * FROM products WHERE category = "bebidas" ORDER BY price ASC ';
 			$stmt  = $this->conn->prepare($query);
 
 			try {
@@ -61,7 +61,7 @@
 
 		public function acrescimosList(){
 
-			$query = 'SELECT FROM products WHERE category = "acrescimos" ORDER BY price ASC ';
+			$query = 'SELECT * FROM products WHERE category = "acrescimos" ORDER BY price ASC ';
 			$stmt = $this->conn->prepare($query);
 
 			try {
@@ -81,7 +81,7 @@
 
 		public function sucosList(){
 
-			$query = 'SELECT FROM products WHERE category = "sucos" ORDER BY price ASC ';
+			$query = 'SELECT * FROM products WHERE category = "sucos" ORDER BY price ASC ';
 			$stmt = $this->conn->prepare($query);
 
 			try {

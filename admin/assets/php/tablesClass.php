@@ -40,7 +40,7 @@
 			try{
 				$stmt->execute();
 			} catch (PDOException $e){
-				return $e->getMessage;
+				echo $e->getMessage;
 			}
 		}
 

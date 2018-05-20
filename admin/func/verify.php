@@ -6,7 +6,7 @@
     require_once '../assets/php/request.php';
 
     if(!isset($_SESSION['user_id'])){
-        header('Location: ../404.php');
+        header('Location: ../../404.php');
     }
 
     if(!isset($_POST['id_table'])){
@@ -17,17 +17,24 @@
 
         $table_id = $_POST['id_table'];
 
-        if(isset($_POST['nova']) or isset($_POST['listar'])){
+        $request = new Request();
+        $request->setId($table_id);
 
-            $request = new Request();
-            $comanda = $request->comandas($table_id);
-            
+        if(isset($_POST['nova'])){
+
+            $comanda_id = $request->comandas();
+            header("Location: ../list_teste.php?id=$comanda_id ");
+
+        }else if(isset($_POST['listar'])){
+
+            $comanda_id = $request->comandas();
+            header("Location: ../list_teste.php?id=$comanda_id ");
 
         }else if(isset($_POST['fechar'])){
 
-            
+            $request->close_comanda();
 
-        }    
+        }   
     }
 
 
