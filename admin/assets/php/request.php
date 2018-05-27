@@ -32,7 +32,7 @@ class Request{
                 $table = new Tables();
                 $table->setId($this->id_table);
                 $table->ocupar();
-                $this->newRequest();
+                return $this->newRequest();
 
             } else {
                 return $stmt->fetch(PDO::FETCH_OBJ)->id_request;
@@ -52,7 +52,7 @@ class Request{
 
         try{
             $stmt->execute();
-            return $this->conn->lastInsertId();
+            return $this->comandas();
         } catch (PDOException $e){
             echo $e->getMessage();
         }

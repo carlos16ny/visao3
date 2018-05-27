@@ -1,6 +1,6 @@
 <?php
 
-	require_once 'assets/php/database.php';
+	require_once '../assets/php/database.php';
 
 	class products{
 

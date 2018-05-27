@@ -1,4 +1,4 @@
-<?php
+<?php 
 
     session_start();
 
@@ -6,68 +6,38 @@
         header('Location: ../../404.php?erro=101');
     }
 
-    require_once '../assets/php/tablesClass.php';
-    require_once '../assets/php/request.php';
+    require_once '../assets/php/database.php';
 
-    if(!isset($_SESSION['user_id'])){
-        header('Location: ../../404.php');
+    $id_comanda = $_GET['id'];
+
+    $objDb = new database();
+    $link = $objDb->connection();
+    
+    $query = "SELECT * FROM orders where requests_id_request = :id_request ";
+    $stmt = $link->prepare($query);
+    $stmt->bindParam(":id_request", intval($id_comanda));
+    try{
+        $stmt->execute();
+
+
+    } catch (PDOException $e){
+        echo $e->getMessage();
     }
 
-    if(!isset($_POST['id_table'])){
-
-        header('Location: tables.php?erro=101');
-
-    }else{
-
-        $table_id = $_POST['id_table'];
-
-        $request = new Request();
-        $request->setId($table_id);
-
-        if(isset($_POST['nova'])){
-
-            $comanda_id = $request->comandas();
-            header("Location: list.php?id=$comanda_id ");
-
-        }else if(isset($_POST['listar'])){
-
-            $comanda_id = $request->comandas();
-            header("Location: list_comanda.php?id=$comanda_id ");
-
-        }else if(isset($_POST['fechar'])){
-
-            $request->close_comanda();
-
-        }   
-    }
-
-
-?>
+    ?>
 
 <!doctype html>
-<html lang="pt-br">
+<html lang="pt-bt">
   <head>
-    <title></title>
+    <title>Lista Mesa</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" href="../assets/css/style.css
-    ">
-</head>
+  </head>
   <body>
-
-    <style>
-
-        .h-2{
-            height: 150px;
-        }
-    
-    </style>
-
-
 
     <nav class="navbar navbar-expand-lg mb-2 navbar-light bg-warning">
         <a class="navbar-brand" href="#">TechPizza</a>
@@ -78,26 +48,38 @@
         <div class="collapse navbar-collapse" id="collapsibleNavId">
             <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
                 <li class="nav-item active mr-4">
-                    <a class="nav-link btn btn-primary" href="tables.php">Voltar<span class="sr-only">(current)</span></a>
+                    <a class="nav-link btn btn-primary" href="verify.php">Voltar<span class="sr-only">(current)</span></a>
                 </li>
             </ul>
         </div>
     </nav>   
 
-    <form action="verify.php" method="post">
-        <input type="hidden" name="id_table" value='<?=$table_id?>'>
-        <button class="btn btn-primary w-100 btn-lg py-4 h-2 d-inline-block my-2" type="submit" name="nova">Abrir Comanda</button>
-        <button class="btn btn-success w-100 btn-lg py-4 h-2 d-inline-block my-2" type="submit" name="listar">Listar</button>
-        <button class="btn btn-danger w-100 btn-lg  py-4 h-2 d-inline-block my-2" type="submit" name="fechar">Fechar Comanda</button>
-    </form>
+    <div class="container">
+    
+        <table class="table table-striped">
+            <thead class="thead-inverse">
+                <tr>
+                    <th>Produto</th>
+                    <th>Quantidade</th>
+                    <th>Preço</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            
+            <tbody>
+                <?php while($row = $stmt->fetch(PDO::FETCH_OBJ)){ ?>
+                <tr>
+                    <td><?=$row->description?></td>
+                    <td><?=$row->quantities?></td>
+                    <td><?=$row->price?></td>
+                    <td><?=$row->status?></td>
+                </tr>
+                <?php } ?>
+            </tbody>
+        </table>
 
-        <?=$table_id?>
-        <br>
-        <?=$_SESSION['user']?>
-        <br>
-        <?=$_SESSION['user_id']?>
-
-
+    </div>
+      
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
