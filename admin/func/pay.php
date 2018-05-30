@@ -42,7 +42,7 @@
 </head>
 <body>
     <nav class="navbar navbar-expand-lg mb-2 navbar-light bg-warning">
-        <a class="navbar-brand" href="#">TechPizza</a>
+        <a class="navbar-brand" href="../menu.php">TechPizza</a>
         <button class="navbar-toggler hidden-lg-up " type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId"
             aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -63,7 +63,7 @@
                 <tr>
                     <th>Produto</th>
                     <th>Quantidade</th>
-                    <th>Preço</th>
+                    <th colspan="2">Preço</th>
                     <th>Status</th>
                 </tr>
             </thead>
@@ -74,7 +74,7 @@
                 <tr>
                     <td><?=$row->description?></td>
                     <td><?=$row->quantities?></td>
-                    <td><?=$row->price?></td>
+                    <td colspan="2"><?=$row->price?></td>
                     <?php $soma += (float) $row->price ; ?>
                     <td><?=$row->status?></td>
                 </tr>

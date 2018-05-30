@@ -65,7 +65,7 @@
 
 
     <nav class="navbar navbar-expand-lg mb-2 navbar-light bg-warning">
-        <a class="navbar-brand" href="#">TechPizza</a>
+        <a class="navbar-brand" href="../menu.php">TechPizza</a>
         <button class="navbar-toggler hidden-lg-up " type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId"
             aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -85,12 +85,6 @@
         <button class="btn btn-success w-100 btn-lg py-4 h-2 d-inline-block my-2" type="submit" name="listar">Listar</button>
         <button class="btn btn-danger w-100 btn-lg  py-4 h-2 d-inline-block my-2" type="submit" name="fechar">Fechar Comanda</button>
     </form>
-
-        <?=$table_id?>
-        <br>
-        <?=$_SESSION['user']?>
-        <br>
-        <?=$_SESSION['user_id']?>
 
 
     <!-- Optional JavaScript -->

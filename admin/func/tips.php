@@ -20,7 +20,7 @@
     <script src="main.js"></script>
 
     <nav class="navbar navbar-expand-lg navbar-light bg-warning">
-        <a class="navbar-brand" href="#">TechPizza</a>
+        <a class="navbar-brand" href="../menu.php">TechPizza</a>
         <button class="navbar-toggler hidden-lg-up " type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId"
             aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>

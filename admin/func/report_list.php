@@ -19,7 +19,7 @@
     $date = $ano . "-" . $mes . "-" . $dia . " 00:00:00";
     
 
-    $query = "SELECT waiter_tips, requests_tables_id_table, date FROM cashier_request WHERE date >= '$date' AND requests_waiters_id_waiter = '$user_id' ";
+    $query = "SELECT id_request, time_date, value, waiters_id, tables_id_table FROM requests WHERE time_date >= '$date' ";
     $stmt = $link->prepare($query);
 
     try{
@@ -52,7 +52,7 @@
         <div class="collapse navbar-collapse" id="collapsibleNavId">
             <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
                 <li class="nav-item active mr-4">
-                    <a class="nav-link btn btn-primary mb-2" href="tips.php">Voltar<span class="sr-only">(current)</span></a>
+                    <a class="nav-link btn btn-primary mb-2" href="report.php">Voltar<span class="sr-only">(current)</span></a>
                 </li>
             </ul>
         </div>
@@ -65,26 +65,30 @@
                     <table class="table table-striped">
                         <thead class="thead">
                             <tr>
-                                <th>Dia</th>
+                                <th>Comanda</th>
                                 <th>Mesa</th>
+                                <th>Dia</th>
+                                <th>Garçom</th>
                                 <th>Valor</th>
                             </tr>
                         </thead>
                         <tbody>
                             <?php $soma = 0; ?>
                             <?php while($row = $stmt->fetch(PDO::FETCH_OBJ)) { ?>
-                            <?php if($row->waiter_tips > 0) { ?>
                             <tr>
-                                <td><?=$row->date?></td>
-                                <td><?=$row->requests_tables_id_table?></td>
-                                <td><?=$row->waiter_tips?></td>
-                                <?php $somam += (float) $row->waiter_tips; ?>
+                                <td><?=$row->id_request?></td>
+                                <td><?=$row->tables_id_table?></td>
+                                <td><?=$row->time_date?></td>
+                                <td><?=$row->waiters_id?></td>
+                                <td><?=$row->value?></td>
+                                <?php $soma += (float) $row->value; ?>
                             </tr>
-                            <?php } ?>
                             <?php } ?>
                         </tbody>
                         <thead class="thead">
                             <tr>
+                                <th></th>
+                                <th></th>
                                 <th></th>
                                 <th>Soma:</th>
                                 <th><?=$soma?></th>
