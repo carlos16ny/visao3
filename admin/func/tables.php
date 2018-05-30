@@ -11,8 +11,6 @@
         $mesas = new Tables();
         $mesa = $mesas->tablesList();
 
-        $error = isset($_GET['erro']) ? $_GET['erro'] : 0;
-
 
     ?>    
 
@@ -31,16 +29,6 @@
   <body>
 
 
-    <?php
-		if($erro == 101){	?>
-			<div class="alert alert-danger" role="alert">
-			<button type="button" class="close" data-dismiss="alert" aria-label="Close">
-    			<span aria-hidden="true">&times;</span>
- 			</button>
-			<h4 class="alert-heading">Erro ao capturar mesa</h4>
-			<p>verifique a conexão com o banco de dados e tente novamente</p> 
-			</div>
-	<?php } ?>
 
     <nav class="navbar navbar-expand-lg navbar-light bg-warning">
         <a class="navbar-brand" href="#">TechPizza</a>

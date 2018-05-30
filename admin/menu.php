@@ -9,6 +9,7 @@
     $c="";
     $w="";
     $a="";
+    $co="";
 
 
     if($_SESSION['function']=='cashier'){ 
@@ -17,6 +18,8 @@
         $w = "w";
     }else if($_SESSION['function']=='admin'){
         $a = "a";
+    }else if($_SESSION['function']=='cooker'){
+        $z = "z";
     }
     
 ?>
@@ -39,23 +42,23 @@
       
       <div class="container mt-4">
         <div class="row">
-          <div class="col-md-4 col-sm-6 bg-1 mb-3 br-3 <?=$c?> <?=$a?>" role="button">
+          <div class="col-md-4 col-sm-6 bg-1 mb-3 br-3 <?=$c?> <?=$z?> <?=$a?>" role="button">
               <a href="func/tables.php"><i class="fas fa-utensils fa-10x py-4 px-4" style="color: #fff"></i></a>
               <h2 class="h2 pb-3 px-4 text-menu">Mesas</h1>
           </div>
-          <div class="col-md-4 col-sm-6 bg-2 mb-3 <?=$a?>">
-              <a href="func/orders.php"><i class="fas fa-receipt fa-10x py-4 px-4" style="color: #fff"></i></a>
-              <h2 class="h2 pb-3 px-4 text-menu">Comandas</h1>
+          <div class="col-md-4 col-sm-6 bg-2 mb-3 <?=$a?> <?=$w?>  <?=$c?>">
+              <a href="func/kitchen.php"><i class="fas fa-receipt fa-10x py-4 px-4" style="color: #fff"></i></a>
+              <h2 class="h2 pb-3 px-4 text-menu">Cozinha</h1>
           </div>
-          <div class="col-md-4 col-sm-6 bg-3 mb-3 <?=$c?> <?=$a?>">
+          <div class="col-md-4 col-sm-6 bg-3 mb-3 <?=$c?>  <?=$z?>  <?=$a?>">
               <a href="func/tips.php"><i class="fas fa-coins fa-10x py-4 px-4 " style="color: #fff"></i></a>
               <h2 class="h2 pb-3 px-4 text-menu">Gorjetas</h1>
           </div>
-          <div class="col-md-4 col-sm-6 bg-4 mb-3 <?=$w?> <?=$a?>">
+          <div class="col-md-4 col-sm-6 bg-4 mb-3 <?=$w?>  <?=$z?>  <?=$a?>">
               <a href="func/cashier.php"><i class="fas fa-donate fa-10x py-4 px-4" style="color: #fff"></i></a>
               <h2 class="h2 pb-3 px-4 text-menu">Caixa</h1>
           </div>
-          <div class="col-md-4 col-sm-6 bg-5 mb-3 <?=$w . " " .$c?>">
+          <div class="col-md-4 col-sm-6 bg-5 mb-3 <?=$w . " " .$c?>  <?=$z?> ">
               <a href="func/report.php"><i class="fas fa-chart-line fa-10x py-4 px-4" style="color: #fff"></i></a>
               <h2 class="h2 pb-3 px-4 text-menu">Relatórios</h1>
           </div>

@@ -12,18 +12,32 @@
 
     $objDb = new database();
     $link = $objDb->connection();
+
+    if(isset($_POST['excluir'])){
+        $id_order = $_POST['id_order'];
+        
+        $query2 = "DELETE FROM orders WHERE id_order = :id";
+        $stmt2 = $link->prepare($query2);
+        $stmt2->bindParam(":id", $id_order);
+
+        try{
+            $stmt2->execute();
+            echo 'excluido';
+        } catch (PDOException $ex){
+            echo $ex->getMessage();
+        }
+    }
     
     $query = "SELECT * FROM orders where requests_id_request = :id_request ";
     $stmt = $link->prepare($query);
     $stmt->bindParam(":id_request", intval($id_comanda));
     try{
         $stmt->execute();
-
-
     } catch (PDOException $e){
         echo $e->getMessage();
     }
 
+    
     ?>
 
 <!doctype html>
@@ -48,7 +62,7 @@
         <div class="collapse navbar-collapse" id="collapsibleNavId">
             <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
                 <li class="nav-item active mr-4">
-                    <a class="nav-link btn btn-primary" href="verify.php">Voltar<span class="sr-only">(current)</span></a>
+                    <a class="nav-link btn btn-primary" href="../menu.php">Voltar<span class="sr-only">(current)</span></a>
                 </li>
             </ul>
         </div>
@@ -63,19 +77,41 @@
                     <th>Quantidade</th>
                     <th>Preço</th>
                     <th>Status</th>
+                    <th>Excluir</th>
                 </tr>
             </thead>
             
             <tbody>
+                <?php $soma = 0;?>
                 <?php while($row = $stmt->fetch(PDO::FETCH_OBJ)){ ?>
                 <tr>
                     <td><?=$row->description?></td>
                     <td><?=$row->quantities?></td>
                     <td><?=$row->price?></td>
+                    <?php $soma += (float) $row->price ; ?>
                     <td><?=$row->status?></td>
+                    <?php if($row->status == 0) { ?>
+                    <td>
+                        <form action="list_comanda.php?id=<?=$id_comanda?>" method="post">
+                            <input type="hidden" name="id_order" value=<?=$row->id_order?>>
+                            <button type="submit" name="excluir" class="btn btn-danger">Excluir</button>
+                        </form>
+                    </td>
+                    <?php } else { ?>
+                        <td>Produto ja atendido</td>
+                    <?php } ?>
                 </tr>
                 <?php } ?>
             </tbody>
+            <thead class="thead-inverse">
+                <tr>
+                    <th></th>
+                    <th></th>
+                    <th><?=$soma?></th>
+                    <th></th>
+                    <th></th>
+                </tr>
+            </thead>
         </table>
 
     </div>

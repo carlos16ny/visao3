@@ -45,6 +45,8 @@
             $product_id = $_POST['drink_id'];
             $observ = $_POST['observation'];
 
+            $price *= $quantity;
+
         }else if(isset($_POST['refrigerantes'])){
             $flavour = $_POST['refri_flavour'];
             $price = $_POST['refri_price'];
@@ -52,6 +54,8 @@
             $quantity = $_POST['quantity'];
             $product_id = $_POST['refri_id'];
             $observ = $_POST['observation'];
+
+            $price *= $quantity;
 
         }else if(isset($_POST['sucos'])){
             $flavour = $_POST['suco_flavour'];
@@ -61,6 +65,8 @@
             $product_id = $_POST['suco_id'];
             $observ = $_POST['observation'];
 
+            $price *= $quantity;
+
         }else if(isset($_POST['acrescimos'])){
             $flavour = $_POST['acres_flavour'];
             $price = $_POST['acres_price'];
@@ -68,6 +74,8 @@
             $quantity = $_POST['quantity'];
             $product_id = $_POST['acres_id'];
             $observ = $_POST['observation'];
+
+            $price *= $quantity;
         }
 
         $objDb = new database();
@@ -101,17 +109,3 @@
 
 
 ?>
-
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
-
-    
-</body>
-</html>

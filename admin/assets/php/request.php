@@ -63,9 +63,12 @@ class Request{
 
         $query = "UPDATE requests SET status = '1' WHERE tables_id_table = '$this->id_table' AND status = '0'";
         $stmt = $this->conn->prepare($query);
+        
+        
 
         try{
             $stmt->execute();
+
             $table = new Tables();
             $table->setId($this->id_table);
             $table->vagar();
@@ -75,6 +78,25 @@ class Request{
             echo $e->getMessage;
         }
     }
+
+    public function encerra_comanda(){
+
+        $query = "UPDATE requests SET status = '2' WHERE tables_id_table = '$this->id_table' AND status = '0'";
+        $stmt = $this->conn->prepare($query);
+        
+        try{
+            $stmt->execute();
+
+            $table = new Tables();
+            $table->setId($this->id_table);
+            $table->vagar();
+
+        } catch (PDOException $e){
+
+            echo $e->getMessage;
+        }
+    }
+
     
 
 }

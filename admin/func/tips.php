@@ -5,39 +5,6 @@
     if(!isset($_SESSION['user_id'])){
         header('Location: ../../404.php?erro=101');
     }
-
-    $user_id = $_SESSION['user_id'];
-
-    require_once '../assets/php/database.php';
-
-    $objDb = new database();
-    $link = $objDb->connection();
-
-    $dia;
-    $mes;
-    $ano;
-    $date;
-
-    $c = "";
-
-    if(isset($_POST['pesquisa'])){
-        $dia = $_POST['dia'];
-        $mes = $_POST['mes'];
-        $ano = $_POST['ano'];
-        $date = $ano + "-" + $mes + "-" .$dia + " 00:00:00";
-    }
-
-    $query = "SELECT value, tables_id_table, time_date FROM requests WHERE time_date >= '2018-05-17 00:00:00' AND waiters_id = '$user_id' ";
-    $stmt = $link->prepare($query);
-
-    try{
-        $stmt->execute();
-    }catch (PDOExcepion $e){
-        echo $e->getMessage();
-    }
-
-    var_dump($stmt);
-
 ?>
 
 
@@ -61,7 +28,7 @@
         <div class="collapse navbar-collapse" id="collapsibleNavId">
             <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
                 <li class="nav-item active mr-4">
-                    <a class="nav-link btn btn-primary mb-2" href="verify.php">Voltar<span class="sr-only">(current)</span></a>
+                    <a class="nav-link btn btn-primary mb-2" href="../menu.php">Voltar<span class="sr-only">(current)</span></a>
                 </li>
             </ul>
         </div>
@@ -72,7 +39,7 @@
             <div class="mx-auto px-4">
                 <div class="mx-auto">
                     <h3 class="h3 text-center my-4">Seleciona a data de início para as gorjetas</h3>
-                    <form action="tips.php" method="post">
+                    <form action="tips_list.php" method="post">
                         <div class="row ">
                             <div class="col-md-4 text-center">
                                 <h3>Dia</h3>
@@ -120,31 +87,6 @@
             </div>
         </div>
     </div>
-
-    <?php if(isset($_POST['pesquisa'])){ ?>
-
-        <table class="table table-striped">
-            <thead class="thead">
-                <tr>
-                    <th>Dia</th>
-                    <th>Mesa</th>
-                    <th>Valor</th>
-                </tr>
-                </thead>
-                <tbody>
-                    <?php while($row = $stmt->fetch(PDO::FETCH_OBJ)) { ?>
-                    <tr>
-                        <td><?=$row->time_date?></td>
-                        <td><?=$row->tables_id_table?></td>
-                        <td><?=$row->value*0.1?></td>
-                    </tr>
-                    <?php var_dump($row); } ?>
-                </tbody>
-        </table>
-
-
-    <?php } ?>
-
 </head>
 <body>
     

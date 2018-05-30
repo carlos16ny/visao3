@@ -22,12 +22,16 @@
     background: tomato;
 }
 
+.bg-7{
+    background: blueviolet;
+}
+
 .text-menu{
     font-weight: 700;
     color: white;
     text-shadow: 2px 1px 1px black;
 }
 
-.w, .c, .a{
+.w, .c, .a, .z {
     display: none;
 }

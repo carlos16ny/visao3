@@ -11,12 +11,7 @@
 
     if(!isset($_SESSION['user_id'])){
         header('Location: ../../404.php');
-    }
-
-    if(!isset($_POST['id_table'])){
-
-        header('Location: tables.php?erro=101');
-
+    
     }else{
 
         $table_id = $_POST['id_table'];

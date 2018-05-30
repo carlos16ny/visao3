@@ -98,6 +98,7 @@
 								<option value="admin">Administrador</option>
 								<option value="waiters">Garçom</option>
 								<option value="cashier">Caixa</option>
+								<option value="cooker">Cozinha</option>
 							</select>
 						</div>
 						<button type="submit" id="btn-login" class="btn btn-primary submit mb-4 mt-4">Let's cook</button>
