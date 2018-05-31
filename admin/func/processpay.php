@@ -31,8 +31,12 @@
       // var_dump($dados->tables_id_table);
       // var_dump($dados->waiters_id);
       // var_dump($dados->value);
-
+      
+      header("Location: success.php");
+      
     }
+
+
     
 
 ?>

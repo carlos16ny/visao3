@@ -1,0 +1,13 @@
+##################################
+
+instruções para uso do sitema
+
+#1 - criar conexao no mysql com o user = 'carlos' e senha NULL;
+#2 - criar database de nome mydb;
+#3 - rodar o script para a criação de database;
+#4 - mover toda a pasta para seu diretório AMPP;
+#5 - utilize preferencialmente as seções anonimas onde o cache não é armazenado, evitando problemas de session;
+#6 - pede uma pizza real pq vai dar fome;
+
+
+##################################

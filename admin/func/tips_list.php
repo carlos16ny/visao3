@@ -78,7 +78,7 @@
                                 <td><?=$row->date?></td>
                                 <td><?=$row->requests_tables_id_table?></td>
                                 <td><?=$row->waiter_tips?></td>
-                                <?php $somam += (float) $row->waiter_tips; ?>
+                                <?php $soma += (float) $row->waiter_tips; ?>
                             </tr>
                             <?php } ?>
                             <?php } ?>
