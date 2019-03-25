@@ -1,18 +1,17 @@
-    <?php
+<?php
+session_start();
 
-        session_start();
-
-        if(!isset($_SESSION['user_id'])){
-            header('Location: ../../404.php?erro=101');
-        }
-        
-        require_once '../assets/php/tablesClass.php';
-        
-        $mesas = new Tables();
-        $mesa = $mesas->tablesList();
+    if(!isset($_SESSION['user_id'])){
+        header('Location: ../../404.php?erro=101');
+    }
+    
+    require_once '../assets/php/tablesClass.php';
+    
+    $mesas = new Tables();
+    $mesa = $mesas->tablesList();
 
 
-    ?>    
+?>    
 
 
 <!doctype html>

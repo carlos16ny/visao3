@@ -1,6 +1,5 @@
 <?php
-
-    session_start();
+session_start();
 
     require_once '../assets/php/tablesClass.php';
     require_once '../assets/php/request.php';
