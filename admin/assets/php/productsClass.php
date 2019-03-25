@@ -28,7 +28,7 @@
 		}
 
 		public function refrigerantesList(){
-s			$query = 'SELECT * FROM products WHERE category = "refrigerante" ';
+			$query = 'SELECT * FROM products WHERE category = "refrigerante" ';
 			$stmt = $this->conn->prepare($query);
 
 			try {

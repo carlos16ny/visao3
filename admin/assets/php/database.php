@@ -2,10 +2,10 @@
 
 class database{
 
-	private $host = 'localhost';
-	private $user = 'carlos';
+	private $host = 'comanda_sql';
+	private $user = 'root';
 	private $db_name = 'mydb';
-	private $pass = '';
+	private $pass = '2528';
 	public $conn;
 
 	public function connection(){
